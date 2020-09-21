@@ -28,7 +28,7 @@ public final class OkHttpDataSourceFactory extends HttpDataSource.BaseFactory {
 
   private final Call.Factory callFactory;
   private final String userAgent;
-  private final TransferListener<? super DataSource> listener;
+  private final TransferListener listener;
   private final CacheControl cacheControl;
 
   /**
@@ -50,7 +50,7 @@ public final class OkHttpDataSourceFactory extends HttpDataSource.BaseFactory {
    * @param cacheControl An optional {@link CacheControl} for setting the Cache-Control header.
    */
   public OkHttpDataSourceFactory(Call.Factory callFactory, String userAgent,
-      TransferListener<? super DataSource> listener, CacheControl cacheControl) {
+      TransferListener listener, CacheControl cacheControl) {
     this.callFactory = callFactory;
     this.userAgent = userAgent;
     this.listener = listener;
