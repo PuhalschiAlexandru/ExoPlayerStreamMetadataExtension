@@ -56,7 +56,7 @@ public class OkHttpDataSource implements HttpDataSource {
   private final Call.Factory callFactory;
   private final String userAgent;
   private final Predicate<String> contentTypePredicate;
-  private final TransferListener<? super OkHttpDataSource> listener;
+  private final TransferListener listener;
   private final CacheControl cacheControl;
   private final HashMap<String, String> requestProperties;
 
@@ -95,7 +95,7 @@ public class OkHttpDataSource implements HttpDataSource {
    * @param listener An optional listener.
    */
   public OkHttpDataSource(Call.Factory callFactory, String userAgent,
-      Predicate<String> contentTypePredicate, TransferListener<? super OkHttpDataSource> listener) {
+      Predicate<String> contentTypePredicate, TransferListener listener) {
     this(callFactory, userAgent, contentTypePredicate, listener, null);
   }
 
@@ -111,7 +111,7 @@ public class OkHttpDataSource implements HttpDataSource {
    * @param cacheControl An optional {@link CacheControl} for setting the Cache-Control header.
    */
   public OkHttpDataSource(Call.Factory callFactory, String userAgent,
-      Predicate<String> contentTypePredicate, TransferListener<? super OkHttpDataSource> listener,
+      Predicate<String> contentTypePredicate, TransferListener listener,
       CacheControl cacheControl) {
     this.callFactory = Assertions.checkNotNull(callFactory);
     this.userAgent = Assertions.checkNotEmpty(userAgent);
